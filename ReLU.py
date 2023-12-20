@@ -3,12 +3,12 @@ class relu:
         self.mask = None
 
     def forward(self, x):
-        # assume that type of 'x' is numpy.array
         self.mask = (x < 0)
-        out = x[self.mask] = 0
+        out = x.copy()
+        out[self.mask] = 0
         return out
 
     def backward(self, dout):
+        dout[self.mask] = 0
         dx = dout
-        dx[self.mask] = 0
         return dx

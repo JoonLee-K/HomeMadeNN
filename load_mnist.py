@@ -10,7 +10,7 @@ from dataset.mnist import load_mnist
 
 def loadData():
     # Loading MNIST data
-    (x_train, y_train), (x_test, y_test) = load_mnist(flatten=True, normalize=False)
+    (x_train, y_train), (x_test, y_test) = load_mnist(flatten=True, normalize=True)
 
     print("The shape of the training set feature matrix is:", x_train.shape)
     print("The shape of the training label vector is:", y_train.shape)
